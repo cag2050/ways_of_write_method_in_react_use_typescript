@@ -1,5 +1,5 @@
 ### 函数的3种写法（详见 src/App.tsx）：
-1. 函数写法1：直接写，this 是 undefined
+1. 函数写法1：直接写，this 是 undefined（在render里用箭头函数调用时，this 是当前实例）
 2. 函数写法2：箭头函数，this 是当前实例
 3. 函数写法3：写好后，在 constructor 中 bind 后，this 是当前实例
 

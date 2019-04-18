@@ -8,7 +8,7 @@ class App extends Component {
         // 这边绑定是必要的，这样 `this` 才能在回调函数中使用
         this.handleClick3 = this.handleClick3.bind(this);
     }
-    // 函数写法1：直接这样写，this 是 undefined
+    // 函数写法1：直接这样写，this 是 undefined（在render里用箭头函数调用时，this 是当前实例）
     handleClick1() {
         console.log('handleClick1');
         console.log('this is:', this);
@@ -46,6 +46,7 @@ class App extends Component {
         return (
             <div className="App">
                 <button onClick={this.handleClick1}>handleClick1</button>
+                <button onClick={() => this.handleClick1()}>箭头函数调用handleClick1</button>
                 <button onClick={() => this.handleClick1HasParams("写入的参数")}>handleClick1HasParams</button>
                 <button onClick={this.handleClick2}>handleClick2</button>
                 <button onClick={() => this.handleClick2HasParams("写入的参数")}>handleClick2HasParams</button>
