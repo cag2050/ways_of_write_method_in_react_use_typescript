@@ -1,3 +1,10 @@
+### 函数的3种写法（详见 src/App.tsx）：
+1. 函数写法1：直接写，this 是 undefined
+2. 函数写法2：箭头函数，this 是当前实例
+3. 函数写法3：写好后，在 constructor 中 bind 后，this 是当前实例
+
+* 如果是带参数的函数，在 render 里调用上面的3种写法时，都需要用箭头函数写法：`<button onClick={() => this.handleClick1HasParams("写入的参数")}>handleClick1HasParams</button>`
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
